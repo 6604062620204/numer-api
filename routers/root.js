@@ -1,7 +1,13 @@
 import express from "express";
 import { PrismaClient } from "@prisma/client";
 const router = express.Router();
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: process.env.POSTGRES_PRISMA_URL, // ใช้ environment variable ในการเชื่อมต่อฐานข้อมูล
+    },
+  },
+});
 
 /**
  * @swagger

@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "./generated/client"
 }
 
 datasource db {
@@ -34,3 +33,6 @@ model Linear {
   equation  String
   createdAt DateTime @default(now())
 }
+
+// model Exter {
+// }
